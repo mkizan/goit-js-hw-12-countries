@@ -20,10 +20,10 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"EGsz":[function(require,module,exports) {
 "use strict";function e(){return{input:document.querySelector("#validation-input"),countryContainer:document.querySelector(".country-container")}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"irxn":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e="https://restcountries.eu/rest/v2";function t(t){return fetch(`${e}/name/${t}`).then(e=>{if(e.ok)return e.json()})}var r={fetchCountries:t};exports.default=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e="https://restcountries.com/v2";function t(t){return fetch(`${e}/name/${t}`).then(e=>{if(e.ok)return e.json()})}var r={fetchCountries:t};exports.default=r;
 },{}],"CAOP":[function(require,module,exports) {
 "use strict";var e=require("./pnotify-error"),t=u(require("../templates/country-card.hbs")),n=u(require("../templates/country-list.hbs")),r=u(require("./get-refs.js")),o=u(require("./fetchCountries.js"));function u(e){return e&&e.__esModule?e:{default:e}}var i=require("lodash.debounce");const c=(0,r.default)();function s(t){c.countryContainer.innerHTML="";const n=t.target.value;""!==c.input.value.trim()&&o.default.fetchCountries(n).then(a).catch(e.onFetchError)}function a(t){console.log("find countries:",t.length),1===t.length?l(t):t.length>=2&&t.length<10?f(t):t.length>10&&(0,e.onDecreaseRequestError)()}function l(e){const n=(0,t.default)(e);c.countryContainer.insertAdjacentHTML("beforeend",n)}function f(e){const t=(0,n.default)(e);c.countryContainer.insertAdjacentHTML("beforeend",t)}c.input.addEventListener("input",i(s,500));
 },{"lodash.debounce":"PZFh","./pnotify-error":"PjnV","../templates/country-card.hbs":"DRrH","../templates/country-list.hbs":"htiI","./get-refs.js":"EGsz","./fetchCountries.js":"irxn"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/input-script");
 },{"./sass/main.scss":"clu1","./js/input-script":"CAOP"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-12-countries/src.fa70d9e0.js.map
+//# sourceMappingURL=/goit-js-hw-12-countries/src.db9fd05a.js.map
